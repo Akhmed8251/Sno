@@ -1,23 +1,23 @@
 @font-face {
     font-family: "Geometria";
-    src: url('fonts/Geometria-Regular.woff2') format('woff2'),
-        url('fonts/Geometria-Regular.woff') format('woff');
+    src: url('/fonts/Geometria-Regular.woff2') format('woff2'),
+        url('/fonts/Geometria-Regular.woff') format('woff');
     font-weight: 400;
     display: swap;
 }
 
 @font-face {
     font-family: "Geometria";
-    src: url('fonts/Geometria-Medium.woff2') format('woff2'),
-        url('fonts/Geometria-Medium.woff') format('woff');
+    src: url('/fonts/Geometria-Medium.woff2') format('woff2'),
+        url('/fonts/Geometria-Medium.woff') format('woff');
     font-weight: 500;
     display: swap;
 }
 
 @font-face {
     font-family: "Geometria";
-    src: url('fonts/Geometria-Bold.woff2') format('woff2'),
-        url('fonts/Geometria-Bold.woff') format('woff');
+    src: url('/fonts/Geometria-Bold.woff2') format('woff2'),
+        url('/fonts/Geometria-Bold.woff') format('woff');
     font-weight: 700;
     display: swap;
 }
