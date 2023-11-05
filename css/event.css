@@ -68,6 +68,10 @@ body {
     font-family: "Geometria", sans-serif;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 .container {
     max-width: 1565px;
     padding: 0 15px;
@@ -129,6 +133,20 @@ body {
     cursor: pointer;
 }
 
+.gallery__image {
+    display: flex;
+    justify-content: center;
+    height: 592px;
+    background-color: #e9e1f1;
+}
+
+.gallery__image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 100%;
+}
+
 .gallery__image-zoom {
     content: '';
     position: absolute;
@@ -158,10 +176,6 @@ body {
 .gallery__image-block:hover .gallery__image-zoom {
     opacity: 1;
 }
-
-/* .bx-touch .news-detail .news-detail-section .pictures:hover .zoom-in {
-    display: none;
-} */
 
 .gallery__pictures {
     position: fixed;
@@ -227,14 +241,6 @@ body {
     border-color: rgba(255,255,255,.25);
 }
 
-.bx-touch .modal-photos .actions .button:hover {
-    border-color: rgba(255,255,255,.1);
-}
-
-.bx-touch .modal-photos .actions .button:active {
-    border-color: rgba(255,255,255,.25);
-}
-
 .actions-pictures__action + .actions-pictures__action {
     margin: 0 0 0 15px;
 }
@@ -256,16 +262,20 @@ body {
     opacity: 0;
 }
 
+.actions-pictures__action_fullscreen._active path:nth-child(1) {
+    opacity: 0;
+}
+
+.actions-pictures__action_fullscreen._active path:nth-child(2) {
+    opacity: 1;
+}
+
 .actions-pictures__action_close svg {
     width: 16px;
     height: 16px;
 }
 
-.actions-pictures__action_close svg path {
-    stroke: var(--c-w);
-}
-
-.modal-photos .arrow {
+.gallery__slider-arrow {
     border-radius: 5px;
     width: 42px;
     height: 42px;
@@ -279,40 +289,28 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--c-ps1);
+    background-color: #9b44f2;
 }
 
-.modal-photos .arrow:hover {
-    background-color: var(--c-pe1);
-}
-
-.bx-touch .modal-photos .arrow {
-    display: none;
-}
-
-.bx-touch .modal-photos .arrow:hover {
-    background-color: var(--c-ps1);
-}
-
-.bx-touch .modal-photos .arrow:active {
-    background-color: var(--c-pe1);
-}
-
-.modal-photos .arrow.prev {
+.gallery__slider-arrow_prev {
     left: 25px;
 }
 
-.modal-photos .arrow.next {
+.gallery__slider-arrow_next {
     right: 25px;
 }
 
-.modal-photos .arrow svg {
+.gallery__slider-arrow:hover {
+    background-color: #8d32e7;
+}
+
+.gallery__slider-arrow svg {
     width: 16px;
     height: 16px;
 }
 
-.modal-photos .arrow svg path {
-    stroke: var(--c-w);
+.gallery__slider-arrow path {
+    stroke: #fff;
     stroke-width: 18;
 }
 
@@ -327,6 +325,27 @@ body {
     height: 100%;
     max-height: 100vh;
     object-fit: contain;
+}
+
+.gallery__slider .swiper-pagination {
+    color: #fff;
+    font-size: 15px;
+    height: 38px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: default;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 76px;
+    background-color: rgba(0,0,0,.5);
 }
 
 .footer__content {
@@ -441,4 +460,10 @@ address.data-item__value {
     font-size: 24px;
     font-weight: 500;
     color: #fff;
+}
+
+@media (max-width: 768px) {
+    .gallery__slider-arrows {
+        display: none;
+    }
 }
