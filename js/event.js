@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
-
+    
     new Swiper(".gallery__slider", {
         slidesPerView: 1,
         spaceBetween: 20,
