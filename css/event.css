@@ -258,6 +258,7 @@ body {
     display: block;
     font-weight: 500;
     color: #a8a8a8;
+    margin-bottom: 7px;
 }
 
 .data-item__value {
@@ -275,7 +276,7 @@ address.data-item__value {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 33px;
+    gap: 15px 33px;
 }
 
 .social-item {
@@ -286,10 +287,12 @@ address.data-item__value {
 .social-item__link {
     display: flex;
     align-items: center;
-    gap: 72px;
+    flex-wrap: wrap;
+    gap: 15px 72px;
     padding: 20px 26px;
     border-radius: 15px;
     transition: background-color .3s;
+    word-break: break-word;
 }
 
 .social-item_vk .social-item__link {
@@ -331,18 +334,26 @@ address.data-item__value {
     width: 37px;
     height: 37px;
     background-image: url('/images/vk.svg');
+    background-size: contain;
 }
 
 .social-item_telegram .social-item__label::before {
     width: 41px;
     height: 41px;
     background-image: url('/images/telegram.svg');
+    background-size: contain;
 }
 
 .social-item__text {
     font-size: 24px;
     font-weight: 500;
     color: #fff;
+}
+
+@media (max-width: 1200px) {
+    .header__nav-list {
+        justify-content: flex-start;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -356,6 +367,10 @@ address.data-item__value {
 }
 
 @media (max-width: 768px) {
+    .header__nav-link {
+        font-size: 24px;
+    }
+
     .news-item__title {
         font-size: 36px;
         margin-bottom: 30px;
@@ -374,9 +389,35 @@ address.data-item__value {
     .news-item__content {
         margin-bottom: 48px;
     }
+
+    .footer__content {
+        padding: 30px;
+    }
+
+    .data-item__value {
+        font-size: 20px;
+    }
+
+    .social-item_vk .social-item__label::before,
+    .social-item_telegram .social-item__label::before {
+        width: 32px;
+        height: 32px;
+    }
+
+    .social-item__link {
+        padding: 16px;
+    }
+
+    .social-item__text {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 575px) {
+    .header__nav-link {
+        font-size: 20px;
+    }
+
     .news-item__title {
         font-size: 24px;
     }
@@ -406,7 +447,35 @@ address.data-item__value {
 }
 
 @media (max-width: 425px) {
+    .header__nav-link {
+        font-size: 18px;
+    }
+
     .swiper-navigation {
        display: none;
+    }
+
+    .footer__content {
+        padding: 20px;
+    }
+
+    .footer__logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-data {
+        margin-bottom: 26px;
+    }
+
+    .data-item__label {
+        font-size: 14px;
+    }
+
+    .data-item__value {
+        font-size: 16px;
+    }
+
+    .social-item__text {
+        font-size: 16px;
     }
 }
