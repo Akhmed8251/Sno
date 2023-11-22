@@ -98,4 +98,58 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     monthsChoice.setChoices(monthChoices, "value", "label", true)
     monthsChoice.setChoiceByValue(currentMonthsNumber + 1);
+
+    yearsSelect.addEventListener("choice", function(evt) {
+        let year = evt.detail.choice.value
+        let month = monthsChoice.getValue(true) - 1
+        showCalendar(year, month)
+    })
+
+    monthsSelect.addEventListener("choice", function(evt) {
+        let month = evt.detail.choice.value
+        let year = yearsChoice.getValue(true)
+        showCalendar(year, month)
+    })
+
+    let selectedYear = yearsChoice.getValue(true)
+    let selectedMonthNumber = monthsChoice.getValue(true)
+
+    
+    const showCalendar = (year, month) => {
+        month--
+        var d = new Date(year, month),
+        tableTbody = '';
+
+        for (var i = 0; i < getDay(d); i++) {
+            tableTbody += '<td></td>';
+        }
+
+        // ячейки календаря с датами
+        while (d.getMonth() == month) {
+            tableTbody += `<td class="calendar__day"></td>`;
+
+            if (getDay(d) % 7 == 6) {
+                tableTbody += '</tr><tr>';
+            }
+            d.setDate(d.getDate() + 1);
+        }
+
+        if (getDay(d) != 0) {
+            for (var i = getDay(d); i < 7; i++) {
+                tableTbody += '<td></td>';
+            }
+        }
+
+        tableTbody += '</tr>';
+
+        function getDay(date) {
+            var day = date.getDay();
+            if (day == 0) day = 7;
+            return day - 1;
+        }
+
+        document.querySelector("tbody").innerHTML = tableTbody
+    }
+
+    showCalendar(selectedYear, selectedMonthNumber)
 })
