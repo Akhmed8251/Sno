@@ -33,6 +33,10 @@ h2.structure__title {
     padding: 48px 52px;
 }
 
+.structure__list:last-of-type .structure-item {
+    background-color: #ececec;
+}
+
 .structure-item_lg {
     grid-column: 2 span;
     padding: 48px 64px 56px;
@@ -67,7 +71,6 @@ h2.structure__title {
     object-position: center;
 }
 
-
 .structure-item__fio {
     font-size: 32px;
     font-weight: 500;
@@ -85,6 +88,7 @@ h2.structure__title {
     font-weight: 500;
     color: #4e0f8d;
     word-break: break-word;
+    display: inline-block;
 }
 
 .structure-item_lg .structure-item__post {
