@@ -38,11 +38,13 @@
 .news-slide__title {
     font-size: 64px;
     margin-bottom: 14px;
+    word-break: break-word;
 }
 
 .news-slide__desc {
     font-size: 20px;
     font-weight: 500;
+    word-break: break-word;
 }
 
 .swiper-3d .swiper-slide-shadow {
@@ -187,12 +189,14 @@
     display: inline-block;
     border: 1px solid #9b44f2;
     border-radius: 5px;
-    padding: 0 35px;
+    padding: 0 10px;
+    text-align: center;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 2.7;
     align-self: start;
     margin-top: auto;
+    width: 100%;
 }
 
 .section-item_about {
@@ -271,8 +275,8 @@
     max-width: 660px;
 }
 
-.section-item_idea .section-item__title {
-    font-size: 64px;
+.section-item_idea .section-item__btn {
+    max-width: 288px;
 }
 
 .section-item_projects {
@@ -322,6 +326,10 @@
 
 
 @media (max-width: 1200px) {
+    .section-item {
+        padding: 25px;
+    }
+    
     .section-item::after {
         opacity: .8;
     }
@@ -331,16 +339,123 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .news-slide {
-        padding: 0 0 80px 60px;
+        padding: 0 0 100px 70px;
     }
 
     .news-slide__title {
-        font-size: 52px;
+        font-size: 48px;
+    }
+
+    .block-sections__list {
+        grid-template-areas: 
+            "about calendar calendar"
+            "about idea idea"
+            "structure rating rating"
+            "projects projects enter";
+    }
+
+    .section-item__title {
+        font-size: 32px;
+    }
+
+    .section-item__title_large {
+        font-size: 48px;
+    }
+
+    .section-item__desc {
+        line-height: 1.3;
+    }
+
+    .section-item_projects::after {
+        width: 260px;
+        height: 200px;
+        background-size: contain;
+        right: -60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news__slider {
+        margin: 70px 0;
+        height: 425px;
+    }
+
+    .news-slide {
+        padding: 0 0 60px 45px;
+    }
+
+    .news-slide__title {
+        font-size: 36px;
+    }
+
+    .swiper-pagination-wrapper {
+        display: none;
+    }
+
+    .section-item::before,
+    .section-item::after {
+        content: none;
+    }
+
+    .section-item__title {
+        font-size: 24px;
+    }
+
+    .section-item__title_large {
+        font-size: 36px;
+    }
+
+    .section-item__desc-item {
+        font-size: 18px;
+    }
+
+    .news-slide {
+        padding: 0 0 60px 45px;
     }
     
     .news-slide__desc {
         font-size: 18px;
+    }
+}
+
+@media (max-width: 575px) {
+    .news__slider {
+        height: 385px;
+    }
+
+    .news-slide {
+        padding: 0 0 30px 30px;
+    }
+
+    .news-slide__title {
+        font-size: 24px;
+    }
+
+    .news-slide__desc {
+        font-size: 16px;
+    }
+
+    .block-sections__list {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+        grid-template-rows: auto;
+    }
+
+    .section-item {
+        grid-area: auto;
+    }
+
+    .section-item__title {
+        margin-bottom: 15px;
+    }
+
+    .section-item__desc-item {
+        font-size: 16px;
+    }
+
+    .section-item__desc-item:not(:last-child) {
+        margin-bottom: 20px;
     }
 }

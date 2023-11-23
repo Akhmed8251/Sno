@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-    new Swiper('.news__slider', {    
+    new Swiper('.news__slider', { 
+        direction: "vertical",
+        effect: "cards",
+        cardsEffect: {
+            perSlideOffset: 10,           
+            rotate: false,                   
+            slideShadows: true,            
+        },
         autoplay: {
             delay: 5000
         }, 
@@ -12,18 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
             prevEl: ".swiper-button-prev",
         },
         breakpoints: {
-            320: {
-                spaceBetween: 20
-            },
             769: {
-                direction: "vertical",
                 allowTouchMove: false,
-                effect: "cards",
-                cardsEffect: {
-                    perSlideOffset: 10,           
-                    rotate: false,                   
-                    slideShadows: true,            
-                }
             }
         }
     })
