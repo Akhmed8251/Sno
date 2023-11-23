@@ -1,0 +1,135 @@
+@font-face {
+    font-family: "Geometria";
+    src: url('/fonts/Geometria-Regular.woff2') format('woff2'),
+        url('/fonts/Geometria-Regular.woff') format('woff');
+    font-weight: 400;
+    display: swap;
+}
+
+@font-face {
+    font-family: "Geometria";
+    src: url('/fonts/Geometria-Medium.woff2') format('woff2'),
+        url('/fonts/Geometria-Medium.woff') format('woff');
+    font-weight: 500;
+    display: swap;
+}
+
+@font-face {
+    font-family: "Geometria";
+    src: url('/fonts/Geometria-Bold.woff2') format('woff2'),
+        url('/fonts/Geometria-Bold.woff') format('woff');
+    font-weight: 700;
+    display: swap;
+}
+
+*,*:before,*:after{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top; max-width: 100%;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+body {
+    font-family: "Geometria", sans-serif;
+}
+
+.container {
+    max-width: 1565px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #161616;
+}
+
+.breadcrumbs {
+    margin-bottom: 38px;
+}
+
+.breadcrumbs__item {
+    display: inline-block;
+    position: relative;
+}
+.breadcrumbs__item::after {
+    content: "/";
+}
+
+.breadcrumbs__item:last-child::after {
+    display: none;
+}
+
+.breadcrumbs__item a,
+.breadcrumbs__item span {
+    font-size: 14px;
+    color: #4e0f8d;
+}
+
+.breadcrumbs__item span {
+    color: #aaa;
+}
+
+@media (max-width: 1024px) {
+    .title {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 575px) {
+    .breadcrumbs {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .title {
+        font-size: 24px;
+    }
+}
